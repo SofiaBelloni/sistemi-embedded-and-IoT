@@ -1,0 +1,25 @@
+#ifndef __SCHEDULER__
+#define __SCHEDULER__
+
+#include "Task.h"
+#include <Ticker.h>
+
+#define MAX_TASKS 50
+
+class Scheduler {
+  
+  int basePeriod;
+  int nTasks;
+  Ticker ticker;
+  Task* taskList[MAX_TASKS];
+
+public:
+  //basePeriod in milliseconds
+  Scheduler();
+  void init(int basePeriod);
+  int GetBasePeriod(){return this->basePeriod;}
+  virtual bool addTask(Task* task);  
+  virtual void schedule();
+};
+
+#endif

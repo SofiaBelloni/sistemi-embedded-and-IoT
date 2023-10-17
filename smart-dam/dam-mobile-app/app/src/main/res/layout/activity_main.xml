@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/connectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="CONNECT TO BLUETOOTH SERVER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/statusLabel"
+        android:layout_width="407dp"
+        android:layout_height="16dp"
+        android:layout_weight="1"
+        android:text="Status : not connected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connectBtn"
+        android:layout_marginLeft="5dp"
+        />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusLabel"
+        tools:layout_editor_absoluteY="287dp"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/state"
+        android:text="STATE:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toStartOf="@+id/actualState"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+
+        android:layout_margin="15dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ND"
+        android:id="@+id/actualState"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        app:layout_constraintStart_toEndOf="@id/state"
+        android:layout_marginTop="25dp"
+
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/waterLevel"
+        android:text="WATER LEVEL:"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toStartOf="@id/actualWaterLevel"
+        app:layout_constraintTop_toBottomOf="@+id/state"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ND"
+        android:id="@+id/actualWaterLevel"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintTop_toBottomOf="@+id/actualState"
+        app:layout_constraintStart_toEndOf="@id/waterLevel"
+
+        android:layout_margin="15dp"
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actualDamOpening"
+        tools:layout_editor_absoluteY="287dp"
+        android:layout_marginTop="25dp"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Manual Mode"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        android:layout_marginTop="25dp"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:id="@+id/damOpening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="DAM OPENING:"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toStartOf="@+id/actualDamOpening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterLevel"
+
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:id="@+id/actualDamOpening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ND"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/damOpening"
+        app:layout_constraintTop_toBottomOf="@+id/actualWaterLevel"
+
+        android:layout_margin="15dp"
+        />
+
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:layout_constraintEnd_toStartOf="@id/button20"
+        android:layout_margin="15dp"
+        android:enabled="false"
+        />
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="20%"
+        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:layout_constraintStart_toEndOf="@id/button0"
+        app:layout_constraintEnd_toStartOf="@id/button40"
+        android:layout_margin="15dp"
+        android:enabled="false"
+        />
+    <Button
+        android:id="@+id/button40"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="40%"
+        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:layout_constraintStart_toEndOf="@id/button20"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="15dp"
+        android:enabled="false"
+        />
+    <Button
+        android:id="@+id/button60"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="60%"
+        app:layout_constraintTop_toBottomOf="@+id/button0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button80"
+        android:layout_margin="15dp"
+        android:enabled="false"
+        />
+
+    <Button
+        android:id="@+id/button80"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="80%"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button20"
+        app:layout_constraintStart_toEndOf="@id/button60"
+        app:layout_constraintEnd_toStartOf="@id/button100"
+        android:layout_margin="15dp"
+        android:enabled="false"
+        />
+
+    <Button
+        android:id="@+id/button100"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        app:layout_constraintTop_toBottomOf="@+id/button40"
+        app:layout_constraintStart_toEndOf="@id/button80"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="15dp"
+        android:enabled="false"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
